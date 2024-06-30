@@ -30,9 +30,11 @@ function drawGrid(size = 16) {
 
     document.querySelectorAll("div.square").forEach((square) => {
         let count = 0;
+        const randomColor = () => {
+            return Math.floor(Math.random() * 255);
+        };
         square.addEventListener("mouseover", () => {
-            
-            square.style.backgroundColor = `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${1-(count/10)}`
+            square.style.backgroundColor = `rgba(${randomColor()}, ${randomColor()}, ${randomColor()}, ${1-(count/10)}`
             square.style.opacity = `${100-(count*10)}`
             count++;
         });
